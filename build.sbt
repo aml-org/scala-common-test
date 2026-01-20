@@ -4,6 +4,10 @@ import sbtsonar.SonarPlugin.autoImport.sonarProperties
 ThisBuild / version := getVersion(0, 2)
 ThisBuild / scalaVersion := "2.12.20"
 
+ThisBuild / organizationName := "MuleSoft, Inc."
+ThisBuild / organizationHomepage := Some(url("http://www.mulesoft.com"))
+ThisBuild / licenses += ("Apache-2.0", url("http://www.apache.org/licenses/LICENSE-2.0"))
+
 val scalaCommonVersion = "2.1.102"
 
 lazy val commonTest = crossProject(JSPlatform, JVMPlatform)
