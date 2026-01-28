@@ -2,7 +2,7 @@ import sbtcrossproject.CrossPlugin.autoImport.crossProject
 import sbtsonar.SonarPlugin.autoImport.sonarProperties
 
 ThisBuild / version := getVersion(0, 2)
-ThisBuild / scalaVersion := "2.12.20"
+ThisBuild / scalaVersion := "2.12.21"
 
 ThisBuild / organizationName := "MuleSoft, Inc."
 ThisBuild / organizationHomepage := Some(url("http://www.mulesoft.com"))
