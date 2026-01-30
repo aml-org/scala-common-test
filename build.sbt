@@ -2,13 +2,13 @@ import sbtcrossproject.CrossPlugin.autoImport.crossProject
 import sbtsonar.SonarPlugin.autoImport.sonarProperties
 
 ThisBuild / version := getVersion(0, 2)
-ThisBuild / scalaVersion := "2.12.20"
+ThisBuild / scalaVersion := "2.12.21"
 
 ThisBuild / organizationName := "MuleSoft, Inc."
 ThisBuild / organizationHomepage := Some(url("http://www.mulesoft.com"))
 ThisBuild / licenses += ("Apache-2.0", url("http://www.apache.org/licenses/LICENSE-2.0"))
 
-val scalaCommonVersion = "2.1.102"
+val scalaCommonVersion = "2.1.106"
 
 lazy val commonTest = crossProject(JSPlatform, JVMPlatform)
   .in(file("."))
@@ -49,7 +49,7 @@ lazy val branch     = sys.env.getOrElse("BRANCH_NAME", "master")
 
 sonarProperties := Map(
     "sonar.login"             -> sonarToken,
-    "sonar.projectKey"        -> "mulesoft.scala-common-test",
+    "sonar.projectKey"        -> "mulesoft.scala-common-test.gec",
     "sonar.projectName"       -> "scala-common-test",
     "sonar.projectVersion"    -> version.value,
     "sonar.sourceEncoding"    -> "UTF-8",
@@ -57,5 +57,6 @@ sonarProperties := Map(
     "sonar.branch.name"       -> branch,
     "sonar.sources"           -> "shared/src/main/scala",
     "sonar.tests"             -> "shared/src/test/scala",
-    "sonar.userHome"          -> "${buildDir}/.sonar"
+    "sonar.userHome"          -> "${buildDir}/.sonar",
+    "sonar.scala.coverage.reportPaths" -> "target/scala-2.12/scoverage-report/scoverage.xml"
 )
