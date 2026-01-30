@@ -8,7 +8,7 @@ ThisBuild / organizationName := "MuleSoft, Inc."
 ThisBuild / organizationHomepage := Some(url("http://www.mulesoft.com"))
 ThisBuild / licenses += ("Apache-2.0", url("http://www.apache.org/licenses/LICENSE-2.0"))
 
-val scalaCommonVersion = "2.1.102"
+val scalaCommonVersion = "2.1.106"
 
 lazy val commonTest = crossProject(JSPlatform, JVMPlatform)
   .in(file("."))
